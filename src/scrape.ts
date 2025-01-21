@@ -2,14 +2,16 @@ import { AffiliateSettings } from "./service/AffiliateSettings";
 import { BrowserService } from "./service/BrowserService";
 import { ScraperFactory } from "./service/ScraperFactory";
 import * as path from 'path';
+import { ScraperUtils } from "./service/ScraperUtils";
 
 async function main() {
 
+    const browserService = new BrowserService();
+    const mappingsPath = path.join(__dirname, 'mappings.json');
     const filePath = path.join(__dirname, 'settings.json');
-
-    const browserService = new BrowserService(); // Create an instance of BrowserService
-
     const affiliates = await AffiliateSettings.populate(filePath);
+
+    await ScraperUtils.retrieveMappings(mappingsPath);
 
     const affiliate = affiliates[0]; // Use default stephanis for now
 
@@ -18,7 +20,6 @@ async function main() {
     const products = await stephanisScraper.search('4K TV');
     
     console.log(products);    
-    console.log(products);
 }
 
 main();
