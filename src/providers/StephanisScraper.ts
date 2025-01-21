@@ -1,20 +1,30 @@
 import { Product } from '../models/Product';
 import { Scraper } from '../models/Scrapper/Scraper';
+import { AffiliateSettings } from '../service/AffiliateSettings';
 import { BrowserService } from '../service/BrowserService';
+import { ScraperUtils } from '../service/ScraperUtils';
 
-export class StephanisScraper implements Scraper {
+export class StephanisScraper implements Scraper 
+{
+
     private browserService: BrowserService;
-    private url: string;
+    private affiliateSettings: AffiliateSettings;
 
-    constructor(browserService: BrowserService, url: string) {
-        this.url = url;
+    constructor(browserService: BrowserService, affiliateSettings: AffiliateSettings) 
+    {
         this.browserService = browserService;
-        this.url = "https://www.stephanis.com.cy/en/products/sound-and-vision/television-and-accessories/television";
+        this.affiliateSettings = affiliateSettings;
     }
 
-    async search(query: string): Promise<Product[]> {
+    async search(query: string): Promise<Product[]> 
+    {
 
-        await this.browserService.goTo(this.url);
+        // Retrieve Categories here
+        const retrievedCategories = ScraperUtils.retrievedCategories(query);
+
+        const matchedAffiliateCategories = ScraperUtils.retrieveAffiliateCategories(retrievedCategories, this.affiliateSettings);
+
+        await this.browserService.goTo(`${this.affiliateSettings.baseUrl}/en/products/sound-and-vision/television-and-accessories/television`);
 
         const page = this.browserService.getPage();
         
@@ -63,6 +73,7 @@ export class StephanisScraper implements Scraper {
         });
 
         await this.browserService.closeBrowser();
+
         return products;
     }
 }

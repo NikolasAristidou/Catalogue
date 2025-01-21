@@ -1,0 +1,202 @@
+{
+  "genericCategories": {
+    "TV": {
+      "keywords": [
+        "4k",
+        "tv",
+        "television",
+        "oled",
+        "hdr",
+        "smart tv",
+        "television"
+      ],
+      "brands": ["Samsung", "LG", "Sony", "Panasonic", "Philips"]
+    },
+    "laptop": {
+      "keywords": [
+        "laptop",
+        "notebook",
+        "macbook",
+        "ultrabook",
+        "windows laptop",
+        "gaming laptop",
+        "chromebook"
+      ],
+      "brands": ["Apple", "Dell", "HP", "Lenovo", "Asus", "Microsoft"]
+    },
+    "smartphone": {
+      "keywords": [
+        "phone",
+        "smartphone",
+        "mobile",
+        "android",
+        "iphone",
+        "smart phone"
+      ],
+      "brands": ["Apple", "Samsung", "Huawei", "Xiaomi", "OnePlus"]
+    },
+    "tablet": {
+      "keywords": [
+        "tablet",
+        "ipad",
+        "android tablet",
+        "windows tablet",
+        "tablet pc"
+      ],
+      "brands": ["Apple", "Samsung", "Huawei", "Microsoft", "Lenovo"]
+    },
+    "headphones": {
+      "keywords": [
+        "headphones",
+        "earphones",
+        "wireless headphones",
+        "over-ear",
+        "in-ear",
+        "bluetooth headphones"
+      ],
+      "brands": ["Sony", "Bose", "Sennheiser", "Beats", "JBL"]
+    },
+    "smartwatch": {
+      "keywords": [
+        "smartwatch",
+        "fitness tracker",
+        "wearable",
+        "apple watch",
+        "garmin",
+        "fitbit"
+      ],
+      "brands": ["Apple", "Samsung", "Garmin", "Fitbit", "Huawei"]
+    },
+    "camera": {
+      "keywords": [
+        "camera",
+        "dslr",
+        "mirrorless",
+        "digital camera",
+        "photography camera",
+        "action camera"
+      ],
+      "brands": ["Canon", "Nikon", "Sony", "GoPro", "Fujifilm"]
+    },
+    "MONITOR": {
+      "keywords": [
+        "monitor",
+        "screen",
+        "display",
+        "led monitor",
+        "gaming monitor",
+        "4k monitor",
+        "curved monitor"
+      ],
+      "brands": ["Samsung", "LG", "ASUS", "Acer", "Dell"]
+    },
+    "game_console": {
+      "keywords": [
+        "game console",
+        "playstation",
+        "xbox",
+        "nintendo switch",
+        "gaming console",
+        "ps5",
+        "xbox series x"
+      ],
+      "brands": ["Sony", "Microsoft", "Nintendo"]
+    },
+    "speaker": {
+      "keywords": [
+        "speaker",
+        "bluetooth speaker",
+        "portable speaker",
+        "soundbar",
+        "smart speaker",
+        "home theater speaker"
+      ],
+      "brands": ["Bose", "Sonos", "JBL", "Sony", "Beats"]
+    },
+    "kitchen_appliance": {
+      "keywords": [
+        "blender",
+        "coffee machine",
+        "microwave",
+        "oven",
+        "fridge",
+        "air fryer",
+        "toaster"
+      ],
+      "brands": ["Ninja", "KitchenAid", "Cuisinart", "Breville", "Philips"]
+    },
+    "computer": {
+      "keywords": ["desktop", "computer", "pc", "all-in-one", "workstation"],
+      "brands": ["Dell", "HP", "Apple", "Lenovo", "Asus"]
+    },
+    "printer": {
+      "keywords": [
+        "printer",
+        "laser printer",
+        "inkjet printer",
+        "multifunction printer"
+      ],
+      "brands": ["HP", "Canon", "Epson", "Brother"]
+    },
+    "home_appliance": {
+      "keywords": [
+        "washing machine",
+        "vacuum cleaner",
+        "dishwasher",
+        "air conditioner",
+        "humidifier",
+        "dehumidifier"
+      ],
+      "brands": ["Samsung", "LG", "Dyson", "Bosch", "Whirlpool"]
+    },
+    "furniture": {
+      "keywords": [
+        "sofa",
+        "couch",
+        "table",
+        "chair",
+        "bed",
+        "bookshelf",
+        "wardrobe",
+        "dresser"
+      ],
+      "brands": ["Ikea", "Wayfair", "Ashley", "Ethan Allen"]
+    },
+    "fashion": {
+      "keywords": [
+        "clothes",
+        "t-shirt",
+        "jeans",
+        "dress",
+        "shoes",
+        "jacket",
+        "jewelry",
+        "handbag"
+      ],
+      "brands": ["Nike", "Adidas", "Zara", "H&M", "Levi's"]
+    },
+    "beauty_products": {
+      "keywords": [
+        "skincare",
+        "makeup",
+        "foundation",
+        "serum",
+        "lipstick",
+        "nail polish",
+        "fragrance"
+      ],
+      "brands": ["L'Oréal", "Estée Lauder", "Clinique", "Maybelline", "MAC"]
+    },
+    "toys": {
+      "keywords": [
+        "toys",
+        "action figure",
+        "doll",
+        "board game",
+        "lego",
+        "playset"
+      ],
+      "brands": ["LEGO", "Mattel", "Hasbro", "Fisher-Price"]
+    }
+  }
+}
