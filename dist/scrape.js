@@ -51,8 +51,7 @@ function main() {
         const filePath = path.join(__dirname, 'settings.json');
         const browserService = new BrowserService_1.BrowserService(); // Create an instance of BrowserService
         const affiliates = yield AffiliateSettings_1.AffiliateSettings.populate(filePath);
-        const affiliate = affiliates[0];
-        console.log(`Using affiliate: ${affiliate.name}`);
+        const affiliate = affiliates[0]; // Use default stephanis for now
         const stephanisScraper = ScraperFactory_1.ScraperFactory.getScraper(affiliate, browserService);
         const products = yield stephanisScraper.search('4K TV');
         console.log(products);
