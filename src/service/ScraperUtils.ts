@@ -35,6 +35,7 @@ export class ScraperUtils
 
     static retrievedCategories(query: string): string[] 
     {
+        // Match the categories with the appropriate mappings
         const queryWords = query.toLowerCase().split(' ');
         const matchedCategories: string[] = [];
 

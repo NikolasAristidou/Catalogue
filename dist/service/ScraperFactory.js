@@ -6,7 +6,7 @@ class ScraperFactory {
     static getScraper(affiliate, browserService) {
         switch (affiliate.name) {
             case 'Stephanis':
-                return new StephanisScraper_1.StephanisScraper(browserService, affiliate.baseUrl);
+                return new StephanisScraper_1.StephanisScraper(browserService, affiliate);
             case 'website2':
             // return new Website2Scraper();
             // Add cases for other websites

@@ -46,11 +46,14 @@ const AffiliateSettings_1 = require("./service/AffiliateSettings");
 const BrowserService_1 = require("./service/BrowserService");
 const ScraperFactory_1 = require("./service/ScraperFactory");
 const path = __importStar(require("path"));
+const ScraperUtils_1 = require("./service/ScraperUtils");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
+        const browserService = new BrowserService_1.BrowserService();
+        const mappingsPath = path.join(__dirname, 'mappings.json');
         const filePath = path.join(__dirname, 'settings.json');
-        const browserService = new BrowserService_1.BrowserService(); // Create an instance of BrowserService
         const affiliates = yield AffiliateSettings_1.AffiliateSettings.populate(filePath);
+        yield ScraperUtils_1.ScraperUtils.retrieveMappings(mappingsPath);
         const affiliate = affiliates[0]; // Use default stephanis for now
         const stephanisScraper = ScraperFactory_1.ScraperFactory.getScraper(affiliate, browserService);
         const products = yield stephanisScraper.search('4K TV');

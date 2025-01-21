@@ -18,7 +18,6 @@ export class StephanisScraper implements Scraper
 
     async search(query: string): Promise<Product[]> 
     {
-
         // Retrieve Categories here
         const retrievedCategories = ScraperUtils.retrievedCategories(query);
 
