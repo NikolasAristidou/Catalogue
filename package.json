@@ -12,7 +12,7 @@
     "typescript": "^5.7.3"
   },
   "scripts": {
-    "build": "tsc && xcopy /Y /I src\\settings.json dist\\settings.json",
+    "build": "tsc && xcopy /Y /I src\\settings.json dist\\settings.json && xcopy /Y /I src\\mappings.json dist\\mappings.json",
     "start": "node dist/scrape.js",
     "dev": "npm run build && npm run start"
   },

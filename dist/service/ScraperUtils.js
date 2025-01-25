@@ -42,37 +42,50 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AffiliateSettings = void 0;
+exports.ScraperUtils = void 0;
 const fs = __importStar(require("fs/promises"));
-class AffiliateSettings {
-    constructor(name, baseUrl, category, urlCategories) {
-        this.name = name;
-        this.baseUrl = baseUrl;
-        this.category = category;
-        this.urlCategories = urlCategories; // No need for optional anymore
+class ScraperUtils {
+    static setMappings(mappings) {
+        this.mappings = mappings;
     }
-    static populate(filePath) {
+    static retrieveMappings(filePath) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 yield fs.access(filePath);
                 const fileContent = yield fs.readFile(filePath, 'utf-8');
-                const settingsArray = JSON.parse(fileContent);
-                return settingsArray.map((setting) => {
-                    if (!setting.name || !setting.baseUrl || !setting.urlCategories) {
-                        throw new Error(`Invalid affiliate setting: ${JSON.stringify(setting)}`);
-                    }
-                    // Fix: Ensure you are passing `urlCategories` and not `additionalConfig`
-                    return new AffiliateSettings(setting.name, setting.baseUrl, setting.category, // Optional, can be undefined
-                    setting.urlCategories // Corrected field to use `urlCategories`
-                    );
-                });
+                const mappingsData = JSON.parse(fileContent);
+                if (!mappingsData.genericCategories) {
+                    throw new Error(`Invalid mappings structure: ${JSON.stringify(mappingsData)}`);
+                }
+                this.setMappings(mappingsData);
             }
             catch (error) {
-                console.error(`Error loading affiliate settings: ${error}`);
+                console.error(`Error loading mappings: ${error}`);
                 throw error;
             }
         });
     }
+    static retrievedCategories(query) {
+        // Match the categories with the appropriate mappings
+        const queryWords = query.toLowerCase().split(' ');
+        const matchedCategories = [];
+        for (const [categoryName, categoryData] of Object.entries(this.mappings.genericCategories)) {
+            const isMatch = queryWords.some(queryWord => categoryData.keywords.some(keyword => keyword.toLowerCase().includes(queryWord)));
+            if (isMatch) {
+                matchedCategories.push(categoryName);
+            }
+        }
+        return matchedCategories;
+    }
+    static retrieveAffiliateCategories(matchedCategories, affiliateSettings) {
+        const matchedAffiliateCategories = [];
+        for (const affiliateCategory of affiliateSettings.urlCategories) {
+            if (matchedCategories.includes(affiliateCategory.name)) {
+                matchedAffiliateCategories.push(affiliateCategory);
+            }
+        }
+        return matchedAffiliateCategories;
+    }
 }
-exports.AffiliateSettings = AffiliateSettings;
-//# sourceMappingURL=AffiliateSettings.js.map
+exports.ScraperUtils = ScraperUtils;
+//# sourceMappingURL=ScraperUtils.js.map

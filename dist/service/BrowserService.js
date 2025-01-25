@@ -61,6 +61,9 @@ class BrowserService {
         });
     }
     getPage() {
+        if (!this.page) {
+            throw new Error('Page not initialized');
+        }
         return this.page;
     }
 }

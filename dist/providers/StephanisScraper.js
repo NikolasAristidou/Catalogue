@@ -10,15 +10,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StephanisScraper = void 0;
+const ScraperUtils_1 = require("../service/ScraperUtils");
 class StephanisScraper {
-    constructor(browserService, url) {
-        this.url = url;
+    constructor(browserService, affiliateSettings) {
         this.browserService = browserService;
-        this.url = "https://www.stephanis.com.cy/en/products/sound-and-vision/television-and-accessories/television";
+        this.affiliateSettings = affiliateSettings;
     }
     search(query) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.browserService.goTo(this.url);
+            // Retrieve Categories here
+            const retrievedCategories = ScraperUtils_1.ScraperUtils.retrievedCategories(query);
+            const matchedAffiliateCategories = ScraperUtils_1.ScraperUtils.retrieveAffiliateCategories(retrievedCategories, this.affiliateSettings);
+            yield this.browserService.goTo(`${this.affiliateSettings.baseUrl}/en/products/sound-and-vision/television-and-accessories/television`);
             const page = this.browserService.getPage();
             if (!page) {
                 throw new Error('Page not initialized');
