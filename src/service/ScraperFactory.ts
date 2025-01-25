@@ -1,4 +1,4 @@
-import { Scraper } from "../models/Scrapper/Scraper";
+import { Scraper } from "../Interfaces/Scrapper/Scraper";
 import { StephanisScraper } from "../providers/StephanisScraper";
 import { AffiliateSettings } from "./AffiliateSettings";
 import { BrowserService } from "./BrowserService";

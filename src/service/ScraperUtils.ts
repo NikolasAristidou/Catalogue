@@ -65,5 +65,11 @@ export class ScraperUtils
         return matchedAffiliateCategories;
     }
 
-    // allonam ethod p ena pintonei tam appings meta
+    static RetrieveSelectors(selectors: { key: keyof BaseSelector, selector: string }[]): { [key in keyof BaseSelector]: string } {
+        return selectors.reduce((acc, { key, selector }) => {
+            acc[key] = selector;
+            return acc;
+        }, {} as { [key in keyof BaseSelector]: string });
+    }
+
 }

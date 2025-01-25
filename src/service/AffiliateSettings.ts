@@ -1,17 +1,13 @@
 import * as fs from 'fs/promises';
-
-export interface urlCategory {
-    name: string;
-    value: string;
-}
+import {UrlCategory} from "../models/Affiliate Models/UrlCategory";
 
 export class AffiliateSettings {
     name: string;
     baseUrl: string;
     category?: string;
-    urlCategories: urlCategory[];
+    urlCategories: UrlCategory[];
 
-    constructor(name: string, baseUrl: string, category: string, urlCategories: urlCategory[]) {
+    constructor(name: string, baseUrl: string, category: string, urlCategories: UrlCategory[]) {
         this.name = name;
         this.baseUrl = baseUrl;
         this.category = category;
