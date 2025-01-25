@@ -6,12 +6,48 @@
         "urlCategories": [
             {
                 "name": "TV",
-                "value": "/en/products/sound-and-vision/television-and-accessories/television"
+                "value": "/en/products/sound-and-vision/television-and-accessories/television?view=thumbnails&sortBy=newest&recordsPerPage=100",
+                "selectors": [
+                    { "key": "id", "selector": ".spotlight-list-text" },
+                    { "key": "name", "selector": ".tile-product-name" },
+                    { "key": "price", "selector": ".listing-details-heading.large-now-price" },
+                    { "key": "originalPrice", "selector": ".listing-details.large-was-price" },
+                    { "key": "description", "selector": ".specs" },
+                    { "key": "link", "selector": "a" },
+                    { "key": "sku", "selector": ".product-code" },
+                    { "key": "images", "selector": ".property-spotlight-image-link-3" },
+                    { "key": "itemWrapper", "selector": ".item-wrapper" }
+                ]
             },
             {
-                "name": "laptops",
-                "value": "/en/products/information-technology/laptops-and-accessories/laptops"
-            }            
+                "name": "MONITOR",
+                "value": "/en/products/sound-and-vision/television-and-accessories/television",
+                "selectors": [
+                    { "key": "id", "selector": ".spotlight-list-text" },
+                    { "key": "name", "selector": ".tile-product-name" },
+                    { "key": "price", "selector": ".listing-details-heading.large-now-price" },
+                    { "key": "originalPrice", "selector": ".listing-details.large-was-price" },
+                    { "key": "description", "selector": ".specs" },
+                    { "key": "link", "selector": "a" },
+                    { "key": "sku", "selector": ".product-code" },
+                    { "key": "images", "selector": ".property-spotlight-image-link-3" },
+                    { "key": "itemWrapper", "selector": ".item-wrapper" }
+                ]
+            },            {
+                "name": "TEST",
+                "value": "/en/products/sound-and-vision/television-and-accessories/television",
+                "selectors": [
+                    { "key": "id", "selector": ".spotlight-list-text" },
+                    { "key": "name", "selector": ".tile-product-name" },
+                    { "key": "price", "selector": ".listing-details-heading.large-now-price" },
+                    { "key": "originalPrice", "selector": ".listing-details.large-was-price" },
+                    { "key": "description", "selector": ".specs" },
+                    { "key": "link", "selector": "a" },
+                    { "key": "sku", "selector": ".product-code" },
+                    { "key": "images", "selector": ".property-spotlight-image-link-3" },
+                    { "key": "itemWrapper", "selector": ".item-wrapper" }
+                ]
+            }
         ],
         "additionalConfig": {
             "pagination": true,
